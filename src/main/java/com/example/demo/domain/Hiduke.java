@@ -18,6 +18,7 @@ public class Hiduke {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
+	private LocalDate date;
 	private String date_id;
     private String date_name;
     private LocalDate calculationResult;
@@ -25,7 +26,7 @@ public class Hiduke {
     
     @Override
     public String toString() {
-    	return "hiduke [id=" + id + ", date_id=" + date_id + ", date_name" + date_name +
+    	return "hiduke [date=" + date +", id=" + id + ", date_id=" + date_id + ", date_name" + date_name +
     			       ", calculationResult" + calculationResult + ", nengappi" + nengappi +"]";
     }
 }

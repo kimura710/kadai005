@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>show date</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+
+</head>
+<body>
+ <div class="container">
+  <h1>Show Date</h1>
+  <div th:object="${hiduke}">
+   <div>
+    <label>ID</label>
+    <p th:text="*{id}"></p>
+   </div>
+    <div>
+    <label>登録した日付</label>
+    <p th:text="*{date}"></p>
+   </div>
+    <div>
+    <label>日付名</label>
+    <p th:text="*{date_name}"></p>
+   </div> 
+   <div>
+    <label>年/月/日</label>
+    <p th:text="*{calculationResult}"></p>
+   </div> 
+  </div>
+  <div>
+    <a class="btn btn-default" th:href="@{/dates/{id}/edit(id=*{id})}">編集</a>
+  </div>
+   <div class="pull-right">
+        <a class="btn btn-link" href="/dates">一覧画面へ</a>
+      </div>
+ </div>
+
+</body>
+</html>

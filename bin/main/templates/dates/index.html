@@ -9,11 +9,12 @@
 </head>
 <body>
  <div class="container">
-   <h1>日付一覧表示</h1>
+   <h1>一覧表示</h1>
    <table class="table">
     <thead>
      <tr>
        <th>ID</th>
+       <th>登録した日付</th>
        <th>日付ID</th>
        <th>日付名</th>
        <th>計算結果</th>
@@ -27,6 +28,7 @@
    <tbody>
      <tr th:each="hiduke:${dates}" th:object="${hiduke}">
             <td th:text="*{id}"></td>
+            <td th:text="${#dates.format(new java.util.Date(),'yyyy/MM/dd')}"></td>
             <td th:text="*{date_id}"></td>
             <td th:text="*{date_name}"></td>
             <td th:text="*{calculationResult}"></td>
@@ -41,7 +43,7 @@
      </tr>
    </tbody>
    </table>
-   <a class="btn btn-default" href="/dates/new">新規作成</a>
+   <a class="btn btn-default" href="/dates/new">新規登録</a>
  </div>
 
 </body>
